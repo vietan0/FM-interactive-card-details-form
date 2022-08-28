@@ -1,0 +1,55 @@
+@import "variables";
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+p {
+	margin: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	padding: 0.5rem 0.75rem;
+	border-radius: 4px;
+	border: 1px solid $light-violet;
+}
+
+button {
+	padding: 0.75rem 0.75rem;
+	border: none;
+	background-color: $dark-violet;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		opacity: 0.8;
+	}
+}
