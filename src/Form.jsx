@@ -45,9 +45,10 @@ export default function Form({formData, errorMessage, updateForm, handleConfirm,
 			</div>
 			<div className="third-row">
 				<div className="field">
-					<label htmlFor="expMonth">Exp. Date</label>
+					<label htmlFor="">Exp. Date</label>
 					<div>
 						<div className="input-container">
+							<label htmlFor="expMonth">Expired Month</label>
 							<input
 								required
 								type="text"
@@ -62,6 +63,7 @@ export default function Form({formData, errorMessage, updateForm, handleConfirm,
 							<div className="outline"></div>
 						</div>
 						<div className="input-container">
+							<label htmlFor="expYear">Expired Year</label>
 							<input
 								required
 								type="text"

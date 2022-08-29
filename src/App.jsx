@@ -78,7 +78,7 @@ export default function App() {
 		<>
 			<div className="decor">
 				<div className="card-front">
-					<img src={cardLogo} alt="" />
+					<img src={cardLogo} alt="" width="84" height="47"/>
 					<div className="info">
 						<p className="card-number">
 							{formData.cardNum
@@ -97,7 +97,10 @@ export default function App() {
 					<span className="cvv">{formData.cvv || "cvv"}</span>
 				</div>
 			</div>
-			<div className="main">
+			<main>
+				<h1 className="sr-only">
+					Interactive card details form - Frontend Mentor Challenge - Solution by Viet An
+				</h1>
 				{!submitted ? (
 					<Form
 						formData={formData}
@@ -109,18 +112,18 @@ export default function App() {
 				) : (
 					<Completed reset={reset} />
 				)}
-			</div>
-			<div className="attribution">
-				Challenge by
-				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-					Frontend Mentor
-				</a>
-				. Coded by{" "}
-				<a href="https://github.com/vietan0" target="_blank">
-					Việt An
-				</a>
-				.
-			</div>
+				<div className="attribution">
+					Challenge by {" "}
+					<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+						Frontend Mentor
+					</a>
+					. Coded by{" "}
+					<a href="https://github.com/vietan0" target="_blank">
+						Việt An
+					</a>
+					.
+				</div>
+			</main>
 		</>
 	);
 }
