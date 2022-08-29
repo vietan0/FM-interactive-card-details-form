@@ -1,68 +1,66 @@
 function checkFormat(pairs, setErrorMessage) {
 	let onlyLetters = /^[a-zA-Z\s]+$/i;
 	let onlyNumbers = /^\d+$/i;
-	for (let p of pairs) {
-		if (p[0] === "cardHolder") {
+	for (let entry of pairs) {
+		if (entry[0] === "cardHolder") {
 			setErrorMessage(prev => ({
 				...prev,
-				[p[0]]: onlyLetters.test(p[1]) ? prev[p[0]] : "Wrong format. Letters only.",
+				[entry[0]]: onlyLetters.test(entry[1]) ? prev[entry[0]] : "Wrong format. Letters only.",
 			}));
 		} else {
 			setErrorMessage(prev => ({
 				...prev,
-				[p[0]]: onlyNumbers.test(p[1]) ? prev[p[0]] : "Wrong format. Numbers only.",
+				[entry[0]]: onlyNumbers.test(entry[1]) ? prev[entry[0]] : "Wrong format. Numbers only.",
 			}));
 		}
 	}
 }
 function checkLength(pairs, setErrorMessage) {
-	for (let p of pairs) {
-		switch (p[0]) {
+	for (let entry of pairs) {
+		switch (entry[0]) {
 			case "cardHolder":
 				setErrorMessage(prev => ({
 					...prev,
-					cardHolder: p[1].length > 2 ? prev[p[0]] : "Length not right.",
+					cardHolder: entry[1].length > 2 ? prev[entry[0]] : "Length not right.",
 				}));
 				break;
 			case "cardNum":
 				setErrorMessage(prev => ({
 					...prev,
-					cardNum: p[1].length === 16 ? prev[p[0]] : "cardNum's Length not right.",
+					cardNum: entry[1].length === 16 ? prev[entry[0]] : "Length not right.",
 				}));
 				break;
 			case "expMonth":
 				setErrorMessage(prev => ({
 					...prev,
-					expMonth: p[1].length === 2 ? prev[p[0]] : "Length not right.",
+					expMonth: entry[1].length === 2 ? prev[entry[0]] : "Length not right.",
 				}));
 				break;
-				cvv;
 			case "expYear":
 				setErrorMessage(prev => ({
 					...prev,
-					expYear: p[1].length === 2 ? prev[p[0]] : "Length not right.",
+					expYear: entry[1].length === 2 ? prev[entry[0]] : "Length not right.",
 				}));
 				break;
 			case "cvv":
 				setErrorMessage(prev => ({
 					...prev,
-					cvv: p[1].length === 3 ? prev[p[0]] : "Length not right.",
+					cvv: entry[1].length === 3 ? prev[entry[0]] : "Length not right.",
 				}));
 				break;
 		}
 	}
 }
 function checkForBlanks(pairs, setErrorMessage) {
-	for (let p of pairs) {
+	for (let entry of pairs) {
 		setErrorMessage(prev => ({
 			...prev,
-			[p[0]]: p[1] !== "" ? prev[p[0]] : "Can't be blank.",
+			[entry[0]]: entry[1] !== "" ? prev[entry[0]] : "Can't be blank.",
 		}));
 	}
-	console.log("Blanks checked!");
 }
 function validMonth(pairs, setErrorMessage) {
-	let month = pairs.find(p => p[0] === "expMonth");
+	let month = pairs.find(entry => entry[0] === "expMonth");
 	setErrorMessage(prev => ({
 		...prev,
 		expMonth: Number(month[1]) > 0 && Number(month[1]) <= 12 ? prev.expMonth : "Invalid month.",
