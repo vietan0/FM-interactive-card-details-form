@@ -70,15 +70,11 @@ export default function App() {
 		}
 	}, [errorMessage, confirmed]);
 
-	useEffect(() => {
-		console.log("formData.cardNum :>>", formData.cardNum);
-	}, [formData.cardNum]);
-
 	return (
 		<>
 			<div className="decor">
 				<div className="card-front">
-					<img src={cardLogo} alt="" width="84" height="47"/>
+					<img src={cardLogo} alt="" width="84" height="47" />
 					<div className="info">
 						<p className="card-number">
 							{formData.cardNum
@@ -113,7 +109,7 @@ export default function App() {
 					<Completed reset={reset} />
 				)}
 				<div className="attribution">
-					Challenge by {" "}
+					Challenge by{" "}
 					<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
 						Frontend Mentor
 					</a>
