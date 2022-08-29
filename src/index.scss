@@ -62,7 +62,7 @@ input {
 }
 
 .decor {
-	background-image: url("./images/bg-main-desktop.png");
+	background-image: url("../images/bg-main-desktop.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 
@@ -81,7 +81,7 @@ input {
 	}
 
 	.card-front {
-		background-image: url("./images/bg-card-front.png");
+		background-image: url("../images/bg-card-front.png");
 		padding: 1.5rem;
 
 		display: flex;
@@ -115,7 +115,7 @@ input {
 	}
 
 	.card-back {
-		background-image: url("./images/bg-card-back.png");
+		background-image: url("../images/bg-card-back.png");
 		top: 50vh;
 		right: -16vw;
 
@@ -234,7 +234,8 @@ form {
 	.decor {
 		height: 180px;
 		flex-grow: 0;
-
+		background-image: url("../images/bg-main-mobile.png");
+		
 		>* {
 			position: relative;
 			transform: scale(0.8);

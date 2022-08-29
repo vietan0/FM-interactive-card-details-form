@@ -3,6 +3,7 @@ import Completed from "./Completed";
 import Form from "./Form";
 import validate from "./validate";
 import injectSpaces from "./injectSpaces";
+import cardLogo from "../images/card-logo.svg";
 
 export default function App() {
 	const [formData, setFormData] = useState({
@@ -28,8 +29,8 @@ export default function App() {
 			if (e.target.name === "cardNum") {
 				return {
 					...prevForm,
-					"cardNum": e.target.value.replaceAll(" ", "")
-				}
+					cardNum: e.target.value.replaceAll(" ", ""),
+				};
 			}
 			return {
 				...prevForm,
@@ -77,7 +78,7 @@ export default function App() {
 		<>
 			<div className="decor">
 				<div className="card-front">
-					<img src="./images/card-logo.svg" alt="" />
+					<img src={cardLogo} alt="" />
 					<div className="info">
 						<p className="card-number">
 							{formData.cardNum
