@@ -72,7 +72,7 @@ export default function App() {
 
 	return (
 		<>
-			<div className="decor">
+			<aside className="decor">
 				<div className="card-front">
 					<img src={cardLogo} alt="" width="84" height="47" />
 					<div className="info">
@@ -92,7 +92,7 @@ export default function App() {
 				<div className="card-back">
 					<span className="cvv">{formData.cvv || "cvv"}</span>
 				</div>
-			</div>
+			</aside>
 			<main>
 				<h1 className="sr-only">
 					Interactive card details form - Frontend Mentor Challenge - Solution by Viet An
