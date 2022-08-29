@@ -14,7 +14,6 @@ function checkFormat(pairs, setErrorMessage) {
 			}));
 		}
 	}
-	console.log("Format checked!");
 }
 function checkLength(pairs, setErrorMessage) {
 	for (let p of pairs) {
@@ -24,8 +23,8 @@ function checkLength(pairs, setErrorMessage) {
 					...prev,
 					cardHolder: p[1].length > 2 ? prev[p[0]] : "Length not right.",
 				}));
+				break;
 			case "cardNum":
-				console.log(p[1].length === 16);
 				setErrorMessage(prev => ({
 					...prev,
 					cardNum: p[1].length === 16 ? prev[p[0]] : "cardNum's Length not right.",
@@ -52,7 +51,6 @@ function checkLength(pairs, setErrorMessage) {
 				break;
 		}
 	}
-	console.log("Length checked!");
 }
 function checkForBlanks(pairs, setErrorMessage) {
 	for (let p of pairs) {
@@ -69,7 +67,6 @@ function validMonth(pairs, setErrorMessage) {
 		...prev,
 		expMonth: Number(month[1]) > 0 && Number(month[1]) <= 12 ? prev.expMonth : "Invalid month.",
 	}));
-	console.log("Month validity checked!");
 }
 
 export default function validate(formData, setErrorMessage) {
